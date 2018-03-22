@@ -1,0 +1,5 @@
+node_modules/
+public/bundle.js
+.vscode/
+coverage/
+yarn-error.log
