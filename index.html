@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Prodellia</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="node_modules/flag-icon-css/css/flag-icon.min.css">
+    <!-- FontAwesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+  </head>
+  <body class="bg-light">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-0">
+      <a class="navbar-brand" href="#">
+        <img src="app/images/pulpopaul.png" class="rounded" height="40px;"/>
+        Prodellia
+      </a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Dashboard</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Apuestas</a>
+          </li>
+        </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown-user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-user-circle"></i>
+            Ricardito
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-user">
+            <a class="dropdown-item" href="#">Perfil</a>
+            <a class="dropdown-item" href="#">Apuestas</a>
+            <a class="dropdown-item" href="#">Cerrar sesión</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <main role="main">
+      <div class="container">
+        <div class="py-3 text-center">
+          <h2>Listado de apuestas</h2>
+        </div>
+        <div>
+          <form class="form-inline">
+            <strong class="mr-2">Filtro: </strong>
+            <select class="form-control my-1 mr-sm-2">
+              <option selected>Fase</option>
+              <option value="1">Selección</option>
+            </select>
+
+            <select class="form-control my-1 mr-sm-2">
+              <option selected>Grupos</option>
+              <option value="1">Octavos</option>
+              <option value="1">Cuartos</option>
+              <option value="1">Semifinal</option>
+              <option value="1">Final</option>
+            </select>
+
+            <select class="form-control my-1 mr-sm-2">
+                <option selected>A</option>
+                <option value="1">B</option>
+                <option value="1">C</option>
+                <option value="1">D</option>
+                <option value="1">E</option>
+                <option value="1">F</option>
+                <option value="1">G</option>
+                <option value="1">H</option>
+              </select>
+
+            <button type="submit" class="btn btn-primary my-1">Aplicar</button>
+
+            <div class="input-group ml-auto">
+              <input type="text" class="form-control" placeholder="Buscar..." required>
+            </div>
+          </form>
+        </div>
+
+        <div class="mt-3">
+            <strong>Apuestas seleccionadas: 3</strong>
+            <button type="button" class="btn btn-primary btn-sm ml-3">Actualizar</button>
+            <button type="button" class="btn btn-secondary btn-sm">Limpiar</button>
+            <div class="alert alert-success mt-2" role="alert">
+              Se actualizaron las 3 apuestas
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+        </div>
+
+        <table class="table table-sm table-striped table-light table-hover text-center mt-3 mr-auto ml-auto" style="width: auto">
+          <thead>
+            <tr>
+              <th scope="col">Editando</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Hora</th>
+              <th scope="col">Local</th>
+              <th scope="col">Resultado</th>
+              <th scope="col">Visitante</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <input type="checkbox" class="form-check-input position-static" checked />
+              </td>
+              <td>14/06</td>
+              <td>12:00</td>
+              <td>
+                <span class="flag-icon flag-icon-ru flag-icon-squared"></span>
+                Rusia
+              </td>
+              <td>
+                <form class="form-inline">
+                  <div class="align-items-center">
+                    <input type="text" class="form-control form-control-sm col-sm-1 text-center" name="resultado_local" value="0"></input>
+                    <input type="text" class="form-control form-control-sm col-sm-1 text-center" name="resultado_visitante" value="0"></input>
+                  </div>
+                </form>
+              </td>
+              <td>
+                <span class="flag-icon flag-icon-sa flag-icon-squared"></span>
+                Arabia Saudita
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <input type="checkbox" class="form-check-input position-static" checked />
+              </td>
+              <td>15/06</td>
+              <td>9:00</td>
+              <td>
+                <span class="flag-icon flag-icon-eg flag-icon-squared"></span>
+                Egipto
+              </td>
+              <td>
+                <form class="form-inline">
+                  <div class="align-items-center">
+                    <input type="text" class="form-control form-control-sm col-sm-1 text-center" name="resultado_local" value="0"></input>
+                    <input type="text" class="form-control form-control-sm col-sm-1 text-center" name="resultado_visitante" value="0"></input>
+                  </div>
+                </form>
+              </td>
+              <td>
+                <span class="flag-icon flag-icon-uy flag-icon-squared"></span>
+                Uruguay
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <input type="checkbox" class="form-check-input position-static" />
+              </td>
+              <td>19/06</td>
+              <td>15:00</td>
+              <td>
+                <span class="flag-icon flag-icon-ru flag-icon-squared"></span>
+                Rusia
+              </td>
+              <td>
+                <form class="form-inline">
+                  <div class="align-items-center">
+                    <input type="text" class="form-control form-control-sm col-sm-1 text-center" name="resultado_local" value="0"></input>
+                    <input type="text" class="form-control form-control-sm col-sm-1 text-center" name="resultado_visitante" value="0"></input>
+                  </div>
+                </form>
+              </td>
+              <td>
+                <span class="flag-icon flag-icon-eg flag-icon-squared"></span>
+                Egipto
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <input type="checkbox" class="form-check-input position-static" checked />
+              </td>
+              <td>20/06</td>
+              <td>12:00</td>
+              <td>
+                <span class="flag-icon flag-icon-uy flag-icon-squared"></span>
+                Uruguay
+              </td>
+              <td>
+                <form class="form-inline">
+                  <div class="align-items-center">
+                    <input type="text" class="form-control form-control-sm col-sm-1 text-center" name="resultado_local" value="0"></input>
+                    <input type="text" class="form-control form-control-sm col-sm-1 text-center" name="resultado_visitante" value="0"></input>
+                  </div>
+                </form>
+              </td>
+              <td>
+                <span class="flag-icon flag-icon-sa flag-icon-squared"></span>
+                Arabia Saudita
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="checkbox" class="form-check-input position-static"  />
+              </td>
+              <td>25/06</td>
+              <td>11:00</td>
+              <td>
+                <span class="flag-icon flag-icon-uy flag-icon-squared"></span>
+                Uruguay
+              </td>
+              <td>
+                <form class="form-inline">
+                  <div class="align-items-center">
+                    <input type="text" class="form-control form-control-sm col-sm-1 text-center" name="resultado_local" value="0"></input>
+                    <input type="text" class="form-control form-control-sm col-sm-1 text-center" name="resultado_visitante" value="0"></input>
+                  </div>
+                </form>
+              </td>
+              <td>
+                <span class="flag-icon flag-icon-ru flag-icon-squared"></span>
+                Rusia
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <input type="checkbox" class="form-check-input position-static"  />
+              </td>
+              <td>25/06</td>
+              <td>11:00</td>
+              <td>
+                <span class="flag-icon flag-icon-sa flag-icon-squared"></span>
+                Arabia Saudita
+              </td>
+              <td>
+                <form class="form-inline">
+                  <div class="align-items-center">
+                    <input type="text" class="form-control form-control-sm col-sm-1 text-center" name="resultado_local" value="0"></input>
+                    <input type="text" class="form-control form-control-sm col-sm-1 text-center" name="resultado_visitante" value="0"></input>
+                  </div>
+                </form>
+              </td>
+              <td>
+                <span class="flag-icon flag-icon-eg flag-icon-squared"></span>
+                Egito
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
