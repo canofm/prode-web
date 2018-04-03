@@ -9,7 +9,7 @@ const renderApp = () => {
 renderApp();
 
 if (module.hot) {
-  module.hot.accept('./components/App', () => {
+  module.hot.accept('', () => {
     renderApp();
   });
 }
