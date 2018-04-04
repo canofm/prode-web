@@ -1,5 +1,23 @@
 import React, { PropTypes } from 'react';
 
+const Team = {};
+Team.propTypes = {
+  flag: PropTypes.string,
+  name: PropTypes.string
+}
+
+const TeamCard = (props) => (
+  <div>
+    <span className={`flag-icon flag-icon-${props.team.flag} flag-icon-squared mr-1`} />
+    {props.team.name}
+  </div>
+);
+
+TeamCard.defaultProps = { team: { } };
+TeamCard.propTypes = {
+  team: Team
+};
+
 const Bet = (props) => {
   const { checked, date, hour, homeTeam, homeBet, awayBet, awayTeam } = props.match;
   return (
@@ -9,10 +27,7 @@ const Bet = (props) => {
       </td>
       <td>{date}</td>
       <td>{hour}</td>
-      <td>
-        <span className={`flag-icon flag-icon-${homeTeam.flag} flag-icon-squared mr-1`} />
-        {homeTeam.name}
-      </td>
+      <td> <TeamCard team={homeTeam} /></td>
       <td>
         <form className="form-inline">
           <div className="align-items-center">
@@ -21,19 +36,10 @@ const Bet = (props) => {
           </div>
         </form>
       </td>
-      <td>
-        <span className={`flag-icon flag-icon-${awayTeam.flag} flag-icon-squared mr-1`} />
-        {awayTeam.name}
-      </td>
+      <td> <TeamCard team={awayTeam}/> </td>
     </tr>
   );
 };
-
-const Team = {};
-Team.propTypes = {
-  flag: PropTypes.string,
-  name: PropTypes.string
-}
 
 const Match = {};
 Match.propTypes = {
