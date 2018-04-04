@@ -27,7 +27,7 @@ const Filter = () => (
             <option value="1">H</option>
         </select>
 
-        <button type="submit" className="btn btn-primary my-1">Aplicar</button>
+        <button type="submit" className="btn btn-info my-1">Aplicar</button>
 
         <div className="input-group ml-auto">
             <input type="text" className="form-control" placeholder="Buscar..." />
