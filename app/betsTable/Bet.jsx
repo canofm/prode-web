@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 const Bet = (props) => {
-  const { checked, date, hour, homeTeam, homeBet, awayBet, awayTeam } = props.bet;
+  const { checked, date, hour, homeTeam, homeBet, awayBet, awayTeam } = props.match;
   return (
     <tr>
       <td>
@@ -35,17 +35,21 @@ Team.propTypes = {
   name: PropTypes.string
 }
 
-Bet.defaultProps = { bet: {} };
+const Match = {};
+Match.propTypes = {
+  checked: PropTypes.boolean,
+  date: PropTypes.string,
+  hour: PropTypes.string,
+  homeTeam: Team,
+  homeBet: PropTypes.integer,
+  awayBet: PropTypes.integer,
+  awayTeam: Team
+};
+
+Bet.defaultProps = { match: {} };
 Bet.propTypes = {
-  bet: {
-    checked: PropTypes.boolean,
-    date: PropTypes.string,
-    hour: PropTypes.string,
-    homeTeam: Team,
-    homeBet: PropTypes.integer,
-    awayBet: PropTypes.integer,
-    awayTeam: Team
-  }
+  match: Match
 };
 
 export default Bet;
+export { Match };
