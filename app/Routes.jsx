@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Layout from './Layout';
-import Bets from './bets';
+import Bets from './components/bets';
 
 const Routes = () =>(
   <BrowserRouter>

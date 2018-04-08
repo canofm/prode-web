@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Filter = () => (
-  <form className="form-inline">
+  <div>
     <strong className="mr-2">Filtro: </strong>
     <select className="form-control my-1 mr-sm-2">
       <option selected>Fase</option>
@@ -28,11 +28,7 @@ const Filter = () => (
     </select>
 
     <button type="submit" className="btn btn-primary my-1">Aplicar</button>
-
-    <div className="input-group ml-auto">
-      <input type="text" className="form-control" placeholder="Buscar..." />
-    </div>
-  </form>
+  </div>
 );
 
 export default Filter;
