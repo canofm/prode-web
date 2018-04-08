@@ -19,12 +19,9 @@ TeamCard.propTypes = {
 };
 
 const Bet = (props) => {
-  const { checked, date, hour, homeTeam, homeBet, awayBet, awayTeam } = props.match;
+  const { date, hour, homeTeam, homeBet, awayBet, awayTeam } = props.match;
   return (
     <tr>
-      <td>
-        <input type="checkbox" className="form-check-input position-static" checked={checked} />
-      </td>
       <td>{date}</td>
       <td>{hour}</td>
       <td> <TeamCard team={homeTeam} /></td>

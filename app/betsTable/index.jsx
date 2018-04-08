@@ -4,7 +4,6 @@ import Bet, { Match } from './Bet';
 const TableHead = () => (
   <thead>
     <tr>
-      <th scope="col">Editando</th>
       <th scope="col">Fecha</th>
       <th scope="col">Hora</th>
       <th scope="col">Local</th>

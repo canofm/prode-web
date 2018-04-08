@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import Filter from '../filter';
-import UpdateOption from '../updateOption';
 import BetsTable from '../betsTable';
 import matches from '../matches';
 
@@ -16,7 +15,6 @@ const Bets = () => (
 	<div>
 		<Title title='Listado de apuestas' />
 		<Filter />
-		<UpdateOption />
 		<BetsTable matches={matches} />
 	</div>
 );
