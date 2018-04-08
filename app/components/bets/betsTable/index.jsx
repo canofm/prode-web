@@ -1,5 +1,6 @@
 import React from 'react';
-import Bet, { Match } from './Bet';
+import Bet from './Bet';
+import { Match } from '../../types';
 
 const TableHead = () => (
   <thead>

@@ -1,22 +1,6 @@
-import React, { PropTypes } from 'react';
-
-const Team = {};
-Team.propTypes = {
-  flag: PropTypes.string,
-  name: PropTypes.string
-}
-
-const TeamCard = (props) => (
-  <div>
-    <span className={`flag-icon flag-icon-${props.team.flag} flag-icon-squared mr-1`} />
-    {props.team.name}
-  </div>
-);
-
-TeamCard.defaultProps = { team: { } };
-TeamCard.propTypes = {
-  team: Team
-};
+import React from 'react';
+import { Match } from '../../types';
+import TeamCard from './TeamCard';
 
 const Bet = (props) => {
   const { date, hour, homeTeam, homeBet, awayBet, awayTeam } = props.match;
@@ -38,21 +22,9 @@ const Bet = (props) => {
   );
 };
 
-const Match = {};
-Match.propTypes = {
-  checked: PropTypes.boolean,
-  date: PropTypes.string,
-  hour: PropTypes.string,
-  homeTeam: Team,
-  homeBet: PropTypes.integer,
-  awayBet: PropTypes.integer,
-  awayTeam: Team
-};
-
 Bet.defaultProps = { match: {} };
 Bet.propTypes = {
   match: Match
 };
 
 export default Bet;
-export { Match };
