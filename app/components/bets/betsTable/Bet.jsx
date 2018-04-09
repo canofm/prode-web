@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Match } from '../../types';
 import TeamCard from './TeamCard';
 
@@ -24,7 +25,7 @@ const Bet = (props) => {
 
 Bet.defaultProps = { match: {} };
 Bet.propTypes = {
-  match: Match
+  match: PropTypes.objectOf(Match)
 };
 
 export default Bet;

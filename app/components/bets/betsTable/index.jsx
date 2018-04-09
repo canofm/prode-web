@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Bet from './Bet';
 import { Match } from '../../types';
 
@@ -23,12 +24,9 @@ const Table = (props) => (
   </table>
 );
 
-Table.defaultProps = {
-  matches: []
-};
-
+Table.defaultProps = { matches: [] };
 Table.propTypes = {
-  matches: [Match]
+  matches: PropTypes.arrayOf(Match)
 };
 
 export default Table;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Team } from '../../types';
 
 const TeamCard = (props) => (
@@ -10,7 +11,7 @@ const TeamCard = (props) => (
 
 TeamCard.defaultProps = { team: { } };
 TeamCard.propTypes = {
-  team: Team
+  team: PropTypes.objectOf(Team)
 };
 
 export default TeamCard;

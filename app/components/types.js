@@ -1,22 +1,22 @@
-import { PropTypes } from 'react';
+import PropTypes from 'prop-types';
 
-const Team = {};
-Team.propTypes = {
-  flag: PropTypes.string,
-  name: PropTypes.string
+class Team {
+  propTypes = {
+    flag: PropTypes.string,
+    name: PropTypes.string
+  };
 };
-
 export { Team };
 
-const Match = {};
-Match.propTypes = {
-  checked: PropTypes.boolean,
-  date: PropTypes.string,
-  hour: PropTypes.string,
-  homeTeam: Team,
-  homeBet: PropTypes.integer,
-  awayBet: PropTypes.integer,
-  awayTeam: Team
+class Match {
+  propTypes = {
+    checked: PropTypes.boolean,
+    date: PropTypes.string,
+    hour: PropTypes.string,
+    homeTeam: PropTypes.objectOf(Team),
+    homeBet: PropTypes.integer,
+    awayBet: PropTypes.integer,
+    awayTeam: PropTypes.objectOf(Team)
+  };
 };
-
 export { Match };
