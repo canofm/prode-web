@@ -11,13 +11,14 @@ const searchTeams = (home, away, currentSearch) => searchTeam(home, currentSearc
 
 class Bets extends Component {
 	state = {
-		searchTerm: ''
+		searchTerm: '',
+		matchs: matches
 	};
 	handleSearchTermChange = (event) => {
 		this.setState({ searchTerm: event.target.value });
 	};
 	render() {
-		const matchesFiltered = matches.filter(({ homeTeam, awayTeam }) => searchTeams(homeTeam, awayTeam, this.state.searchTerm));
+		const matchesFiltered = this.state.matchs.filter(({ homeTeam, awayTeam }) => searchTeams(homeTeam, awayTeam, this.state.searchTerm));
 		const Table = matchesFiltered.length > 0 ? BetsTable : NotFound;
 		return (
 			<div>

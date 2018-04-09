@@ -15,10 +15,13 @@ const Bet = (props) => {
           <div className="align-items-center">
             <input type="text" className="form-control form-control-sm col-sm-1 text-center" value={homeBet} />
             <input type="text" className="form-control form-control-sm col-sm-1 text-center" value={awayBet} />
+            <button type="submit" className="btn btn-warning btn-sm my-1 ml-2">
+              <i className="fas fa-bolt" />
+            </button>
           </div>
         </form>
       </td>
-      <td> <TeamCard team={awayTeam}/> </td>
+      <td> <TeamCard team={awayTeam} /> </td>
     </tr>
   );
 };
