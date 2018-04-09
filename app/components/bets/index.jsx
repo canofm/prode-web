@@ -4,16 +4,10 @@ import SearchMatch from './SearchMatch';
 import Title from '../Title';
 import BetsTable from './betsTable';
 import matches from '../../matches';
+import NotFound from './../NotFound';
 
 const searchTeam = (team, currentSearch) => team.name.toUpperCase().includes(currentSearch.toUpperCase());
 const searchTeams = (home, away, currentSearch) => searchTeam(home, currentSearch) || searchTeam(away, currentSearch);
-
-const NotFound = () => (
-	<div className="jumbotron">
-		<h2 className="display-4 text-center">Sin resultados</h2>
-		<img className="rounded mx-auto d-block" src="app/images/notfound.png" alt="notfound" height="50%;" />
-	</div>
-)
 
 class Bets extends Component {
 	state = {
