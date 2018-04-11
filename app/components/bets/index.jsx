@@ -19,6 +19,16 @@ class Bets extends Component {
 		this.setState({ searchTerm: event.target.value });
 	};
 
+	updateMatch = (bet) => {
+		const updateBet = (match) => {
+			if (match.id === bet.id) return Object.assign({}, match, bet);
+			return match;
+		};
+
+		const updatedMatchs = this.state.matchs.map(updateBet);
+		this.setState({ matchs: updatedMatchs });
+	}
+
 	render() {
 		const matchesFiltered = this.state.matchs.filter(({ homeTeam, awayTeam }) => searchTeams(homeTeam, awayTeam, this.state.searchTerm));
 		const Table = matchesFiltered.length > 0 ? BetsTable : NotFound;
@@ -35,6 +45,7 @@ class Bets extends Component {
 				</form>
 				<Table
 					matches={matchesFiltered}
+					updateMatch={this.updateMatch}
 					{...this.props}
 				/>
 			</div>)

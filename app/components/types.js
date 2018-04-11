@@ -10,7 +10,7 @@ export { Team };
 
 class Match {
   propTypes = {
-    checked: PropTypes.boolean,
+    id: PropTypes.integer,
     date: PropTypes.string,
     hour: PropTypes.string,
     homeTeam: PropTypes.objectOf(Team),

@@ -19,14 +19,15 @@ const Table = (props) => (
   <table className="table table-sm table-striped table-light table-hover text-center mt-3 mr-auto ml-auto" style={{ width: "auto" }}>
     <TableHead />
     <tbody>
-      {props.matches.map(match => <Bet match={match} />)}
+      {props.matches.map(match => <Bet match={match} updateMatch={props.updateMatch} key={match.id}/>)}
     </tbody>
   </table>
 );
 
-Table.defaultProps = { matches: [] };
+Table.defaultProps = { matches: [], updateMatch: () => {} };
 Table.propTypes = {
-  matches: PropTypes.arrayOf(Match)
+  matches: PropTypes.arrayOf(Match),
+  updateMatch: PropTypes.func
 };
 
 export default Table;
