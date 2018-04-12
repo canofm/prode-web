@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const InputBet = (props) => (
-  <input type="text"
+  <input type="number"
     className="form-control form-control-sm col-sm-2 text-center"
     value={props.bet}
     onChange={props.updateBet}
