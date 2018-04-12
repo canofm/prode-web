@@ -24,9 +24,13 @@ class Bets extends Component {
 			if (match.id === bet.id) return Object.assign({}, match, bet);
 			return match;
 		};
-
-		const updatedMatchs = this.state.matchs.map(updateBet);
-		this.setState({ matchs: updatedMatchs });
+		return new Promise((resolve) => {
+			setTimeout(() => {
+				const updatedMatchs = this.state.matchs.map(updateBet);
+				this.setState({ matchs: updatedMatchs });
+				resolve();
+			}, 3000);
+		})
 	}
 
 	render() {
