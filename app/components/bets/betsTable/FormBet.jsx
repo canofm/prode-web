@@ -3,11 +3,14 @@ import PropTypes from 'prop-types';
 import InputBet from './InputBet';
 
 class FormBet extends Component {
-  state = {
-    updated: false,
-    homeBet: 0,
-    awayBet: 0,
-  };
+  constructor(props) {
+    super(props)
+    this.state = {
+      homeBet: props.homeBet,
+      awayBet: props.awayBet,
+      updated: false
+    };
+  }
 
   updateHomeBet = (event) => {
     this.setState({ updated: true, homeBet: event.target.value });
@@ -16,23 +19,23 @@ class FormBet extends Component {
     this.setState({ updated: true, awayBet: event.target.value });
   }
 
-  update = () => {
+  updateMatch = () => {
     const bet = { id: this.props.id, homeBet: this.state.homeBet, awayBet: this.state.awayBet };
     this.setState({ updated: false });
     this.props.updateMatch(bet);
   }
 
   render() {
-    const { homeBet, awayBet } = this.props;
+    const { homeBet, awayBet } = this.state;
     const display = this.state.updated ? '' : 'd-none';
     return (
       <form className="form-inline">
         <div className="align-items-center">
           <InputBet bet={homeBet} updateBet={this.updateHomeBet} />
           <InputBet bet={awayBet} updateBet={this.updateAwayBet} />
-          <button
+          <button type="button"
             className={`btn btn-warning btn-sm my-1 ml-2 ${display}`}
-            onClick={this.update}
+            onClick={this.updateMatch}
           >
             <i className="fas fa-bolt" />
           </button>
