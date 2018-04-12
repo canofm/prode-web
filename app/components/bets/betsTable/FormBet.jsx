@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import InputBet from './InputBet';
+import UpdateButton from './UpdateButton';
 
 class FormBet extends Component {
   constructor(props) {
@@ -33,12 +34,7 @@ class FormBet extends Component {
         <div className="align-items-center">
           <InputBet bet={homeBet} updateBet={this.updateHomeBet} />
           <InputBet bet={awayBet} updateBet={this.updateAwayBet} />
-          <button type="button"
-            className={`btn btn-warning btn-sm my-1 ml-2 ${display}`}
-            onClick={this.updateMatch}
-          >
-            <i className="fas fa-bolt" />
-          </button>
+          <UpdateButton display={display} updateMatch={this.updateMatch} />
         </div>
       </form>
     );
