@@ -20,3 +20,15 @@ class Match {
   };
 };
 export { Match };
+
+const Clasificacion = "Clasificacion";
+const noop = () => { };
+const A = "A";
+const B = "B";
+const C = "C";
+const D = "D";
+const E = "E";
+const F = "F";
+const G = "G";
+const H = "H";
+export { Clasificacion, noop, A, B, C, D, E, F, G, H }

@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import FilterNav from './FilterNav';
-
-const Clasificacion = "Clasificacion";
+import { Clasificacion, A } from '../../types';
 
 class Filter extends Component {
   constructor(props) {
     super(props);
     this.state = {
       stage: Clasificacion,
-      group: "A"
+      group: A
     };
   }
   selectStage = (event) => {

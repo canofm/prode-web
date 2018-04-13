@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import StageSelector from './StageSelector';
 import GroupSelector from './GroupSelector';
-
-const Clasificacion = "Clasificacion";
-const noop = () => { };
+import { Clasificacion, noop } from '../../types'
 
 const FilterNav = (props) => {
   const GroupSel = <GroupSelector group={props.group} selectGroup={props.selectGroup} />;
