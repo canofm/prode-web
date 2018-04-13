@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
-import StageSelector from './StageSelector';
-import GroupSelector from './GroupSelector';
+import FilterNav from './FilterNav';
 
 const Clasificacion = "Clasificacion";
 
@@ -21,15 +19,13 @@ class Filter extends Component {
   }
 
   render() {
-    const GroupSel = <GroupSelector group={this.state.group} selectGroup={this.selectGroup} />;
-    const SecondSelector = this.state.stage === Clasificacion ? GroupSel : null;
     return (
-      <div>
-        <strong className="mr-2">Filtro: </strong>
-        <StageSelector stage={this.state.stage} selectStage={this.selectStage} />
-        {SecondSelector}
-        <button type="submit" className="btn btn-primary my-1">Aplicar</button>
-      </div>
+    <FilterNav
+      stage={this.state.stage}
+      group={this.state.group}
+      selectStage={this.selectStage}
+      selectGroup={this.selectGroup}
+    />
     );
   };
 }
